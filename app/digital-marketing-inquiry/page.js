@@ -1,0 +1,2 @@
+import Link from 'next/link'
+export default function Page(){return <main><section className="page-hero"><span className="eyebrow">DIGITAL MARKETING INQUIRY</span><h1>Plan your next <em>growth campaign.</em></h1><p>The original StandardTouch inquiry captures name, phone, email, currency, ad budget type, daily/monthly budget, discount coupon and reference person. Those fields can be wired to the backend later.</p><Link className="button primary" href="/contact">Start enquiry ↗</Link></section></main>}

@@ -1,0 +1,7 @@
+import {notFound} from 'next/navigation'
+import Link from 'next/link'
+import {services} from '../../../data/services'
+import Arrow from '../../../components/common/Arrow'
+export function generateStaticParams(){return services.map(s=>({slug:s.slug}))}
+export async function generateMetadata({params}){const {slug}=await params;const s=services.find(x=>x.slug===slug);return {title:s?`${s.title} | StandardTouch`:'Services | StandardTouch'}}
+export default async function Page({params}){const {slug}=await params;const s=services.find(x=>x.slug===slug);if(!s)notFound();return <main><section className="service-page-hero"><div><span className="eyebrow">SERVICE / {s.shortLabel}</span><h1>{s.title}</h1><p>{s.intro}</p><Link className="button primary" href="/contact">Request a consultation <Arrow/></Link></div><div className="service-page-orb">{s.shortLabel}</div></section><section className="service-content"><div><span className="eyebrow">WHAT WE PROVIDE</span><h2>Capabilities designed around <em>your workflow.</em></h2></div><div className="offering-list">{s.offerings.map((x,i)=><div key={x}><span>{String(i+1).padStart(2,'0')}</span><strong>{x}</strong><Arrow/></div>)}</div></section><section className="service-process"><span className="eyebrow">HOW WE WORK</span><h2>From idea to <em>measurable outcome.</em></h2><div className="mini-process">{s.process.map((x,i)=><div key={x}><span>0{i+1}</span><p>{x}</p></div>)}</div></section></main>}

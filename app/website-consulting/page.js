@@ -1,0 +1,3 @@
+import Link from 'next/link'
+import {siteData} from '../../data/site'
+export default function Page(){return <main><section className="page-hero"><span className="eyebrow">WEBSITE CONSULTING</span><h1>Got an idea? <em>Let&apos;s talk.</em></h1><p>Partner with StandardTouch for website consulting in Saudi Arabia. Get a free consultation and project estimate.</p><Link className="button primary" href="/contact">Start your project ↗</Link></section><section className="consulting-card"><div><span className="eyebrow">SAUDI ARABIA OFFICE</span><h2>Riyadh</h2><p>{siteData.brand.email}</p><p>WhatsApp / Call: +966 591153847</p></div><div><h3>Send a message</h3><Link href="/contact" className="button secondary">Contact StandardTouch ↗</Link></div></section></main>}

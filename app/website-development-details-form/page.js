@@ -1,0 +1,2 @@
+import Link from 'next/link'
+export default function Page(){return <main><section className="page-hero"><span className="eyebrow">WEBSITE DEVELOPMENT DETAILS</span><h1>Tell us what you need to <em>build.</em></h1><p>The original site provides a detailed website-development inquiry flow. The frontend keeps this route ready for the same multi-step form when the backend/form workflow is connected.</p><Link className="button primary" href="/contact">Continue to enquiry ↗</Link></section></main>}
