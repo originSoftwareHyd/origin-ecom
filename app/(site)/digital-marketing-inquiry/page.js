@@ -1,6 +1,6 @@
-import Contact from '../../components/contact/Contact'
-import Arrow from '../../components/common/Arrow'
-import {buildMetadata} from '../../lib/seo'
+import Contact from '../../../components/contact/Contact'
+import Arrow from '../../../components/common/Arrow'
+import {buildMetadata} from '../../../lib/seo'
 
 const checklist=['Your goal: more leads, more online sales or more brand awareness','Your website or store link and the products or services to promote','Current channels: Google, Snapchat, TikTok, Meta, LinkedIn or SEO','Target cities or regions in Saudi Arabia','Approximate monthly advertising budget (in SAR) and start date']
 

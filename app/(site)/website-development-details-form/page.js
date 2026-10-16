@@ -1,6 +1,6 @@
-import Contact from '../../components/contact/Contact'
-import Arrow from '../../components/common/Arrow'
-import {buildMetadata} from '../../lib/seo'
+import Contact from '../../../components/contact/Contact'
+import Arrow from '../../../components/common/Arrow'
+import {buildMetadata} from '../../../lib/seo'
 
 const checklist=['Type of site: corporate website, online store, portal or landing page','Languages: Arabic, English or both','Approximate number of pages or products','Features: payments, bookings, logins, ERP or CRM integration','Examples of websites you like, and your target launch date']
 

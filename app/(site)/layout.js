@@ -1,12 +1,13 @@
-import './globals.css'
-import './ui-polish.css'
-import './motion.css'
-import Header from '../components/layout/Header'
-import Footer from '../components/layout/Footer'
-import MotionProvider from '../components/motion/MotionProvider'
-import JsonLd from '../components/seo/JsonLd'
-import { businessConfig } from '../config/business.config'
-import { organizationSchema, websiteSchema } from '../lib/seo'
+import '../globals.css'
+import '../ui-polish.css'
+import '../motion.css'
+import Header from '../../components/layout/Header'
+import Footer from '../../components/layout/Footer'
+import MotionProvider from '../../components/motion/MotionProvider'
+import Analytics from '../../components/analytics/Analytics'
+import JsonLd from '../../components/seo/JsonLd'
+import { businessConfig } from '../../config/business.config'
+import { organizationSchema, websiteSchema } from '../../lib/seo'
 
 const description = 'E-commerce stores, bilingual websites, apps, ERPNext with ZATCA e-invoicing and AI automation for businesses in Riyadh, Jeddah and across Saudi Arabia.'
 const { verification } = businessConfig
@@ -30,5 +31,5 @@ export const viewport = { themeColor: '#0b5d46' }
 const motionBoot = "(function(d){if(!matchMedia('(prefers-reduced-motion: reduce)').matches){d.classList.add('js-motion');setTimeout(function(){d.classList.add('motion-ready')},3000)}})(document.documentElement)"
 
 export default function RootLayout({ children }) {
-  return <html lang="en-SA" suppressHydrationWarning><head><script dangerouslySetInnerHTML={{ __html: motionBoot }} /></head><body><JsonLd items={[organizationSchema(), websiteSchema()]} /><Header />{children}<Footer /><MotionProvider /></body></html>
+  return <html lang="en-SA" suppressHydrationWarning><head><script dangerouslySetInnerHTML={{ __html: motionBoot }} /></head><body><JsonLd items={[organizationSchema(), websiteSchema()]} /><Header />{children}<Footer /><MotionProvider /><Analytics /></body></html>
 }

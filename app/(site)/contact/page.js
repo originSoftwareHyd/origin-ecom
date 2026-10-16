@@ -1,6 +1,6 @@
-import Contact from '../../components/contact/Contact'
-import JsonLd from '../../components/seo/JsonLd'
-import {breadcrumbSchema,buildMetadata,webPageSchema} from '../../lib/seo'
+import Contact from '../../../components/contact/Contact'
+import JsonLd from '../../../components/seo/JsonLd'
+import {breadcrumbSchema,buildMetadata,webPageSchema} from '../../../lib/seo'
 
 const title='Contact Origin Ecommerce'
 const description='Book a free consultation with Origin Ecommerce for your online store, website, app, ERP, ZATCA e-invoicing, AI or marketing project in Saudi Arabia.'

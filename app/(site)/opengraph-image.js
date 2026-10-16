@@ -1,4 +1,4 @@
-import { ogSize, renderOgImage } from '../lib/og'
+import { ogSize, renderOgImage } from '../../lib/og'
 
 export const alt = 'Origin Ecommerce: e-commerce, web, ERP and AI solutions for Saudi businesses'
 export const size = ogSize

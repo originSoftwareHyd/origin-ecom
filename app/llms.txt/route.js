@@ -2,6 +2,7 @@ import { businessConfig } from '../../config/business.config'
 import { services } from '../../data/services'
 import { siteData } from '../../data/site'
 import { absoluteUrl } from '../../lib/seo'
+import { guides, landingPath, servicePages } from '../../data/landing'
 
 // llms.txt (https://llmstxt.org): a plain-language summary that AI assistants can read to understand
 // the business. It is generated from the same data as the pages, so facts stay consistent everywhere.
@@ -23,10 +24,19 @@ export function GET() {
     '',
     ...services.map(service => `- [${service.title}](${absoluteUrl(`/services/${service.slug}`)}): ${service.intro}`),
     '',
+    '## Specialist services',
+    '',
+    ...servicePages.map(page => `- [${page.metaTitle}](${absoluteUrl(landingPath(page))}): ${page.intro}`),
+    '',
+    '## Guides (sourced, dated)',
+    '',
+    ...guides.map(page => `- [${page.metaTitle}](${absoluteUrl(landingPath(page))}) (updated ${page.updated}): ${page.intro}`),
+    '',
     '## Key pages',
     '',
     `- [Home](${absoluteUrl('/')}): overview, process and frequently asked questions`,
     `- [All services](${absoluteUrl('/services')})`,
+    `- [Guides](${absoluteUrl('/guides')})`,
     `- [Free consultation](${absoluteUrl('/website-consulting')})`,
     `- [Contact](${absoluteUrl('/contact')})`,
     '',

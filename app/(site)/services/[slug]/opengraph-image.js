@@ -1,5 +1,5 @@
-import { ogSize, renderOgImage } from '../../../lib/og'
-import { getService, services } from '../../../data/services'
+import { ogSize, renderOgImage } from '../../../../lib/og'
+import { getService, services } from '../../../../data/services'
 
 export const alt = 'Origin Ecommerce service in Saudi Arabia'
 export const size = ogSize
