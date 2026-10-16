@@ -85,9 +85,9 @@ export default function MotionProvider() {
       gsap.utils.toArray(SPLIT_HEADINGS).forEach(heading => {
         const inHero = heading.closest('.hero, .page-hero, .case-hero, .service-page-hero')
         SplitText.create(heading, {
-          type: 'words', mask: 'words', autoSplit: true,
+          type: 'words', mask: 'words', wordsClass: 'splitword', autoSplit: true,
           onSplit: self => gsap.from(self.words, {
-            yPercent: 110, duration: 1, ease: 'expo.out', stagger: 0.05, delay: inHero ? 0.15 : 0,
+            yPercent: 135, duration: 1, ease: 'expo.out', stagger: 0.05, delay: inHero ? 0.15 : 0,
             scrollTrigger: inHero ? undefined : { trigger: heading, start: 'top 88%', once: true },
           }),
         })
@@ -111,7 +111,7 @@ export default function MotionProvider() {
         gsap.to('.ring-b', { rotation: -360, duration: 80, repeat: -1, ease: 'none' })
         gsap.utils.toArray('.hero-visual .signal').forEach((s, i) => gsap.to(s, { y: i % 2 ? 10 : -10, duration: 2.6 + i * 0.4, repeat: -1, yoyo: true, ease: 'sine.inOut' }))
         if (fine()) {
-          const layers = [['.ring-a', 18], ['.ring-b', 30], ['.ring-c', 44], ['.visual-core', 24], ['.orb-one', -40], ['.orb-two', -26], ['.hero-visual .signal', 56]]
+          const layers = [['.ring-a', 18], ['.ring-b', 30], ['.ring-c', 44], ['.visual-core', 24], ['.orb-one', -40], ['.hero-visual .signal', 56]]
             .map(([sel, depth]) => [gsap.utils.toArray(sel).map(n => ({ x: gsap.quickTo(n, 'x', { duration: 1.2, ease: 'power3' }), y: gsap.quickTo(n, 'y', { duration: 1.2, ease: 'power3' }) })), depth])
           on(hero, 'pointermove', e => {
             const r = hero.getBoundingClientRect(), px = (e.clientX - r.left) / r.width - 0.5, py = (e.clientY - r.top) / r.height - 0.5

@@ -3,7 +3,7 @@ import Arrow from '../common/Arrow'
 
 export default function Hero() {
   return <section id="top" className="hero">
-    <div className="hero-grid" aria-hidden="true" /><div className="hero-orb orb-one" aria-hidden="true" /><div className="hero-orb orb-two" aria-hidden="true" />
+    <div className="hero-grid" aria-hidden="true" /><div className="hero-orb orb-one" aria-hidden="true" />
     <div className="hero-copy"><div className="kicker"><span /> {siteData.brand.tagline}</div>
       <h1>{siteData.hero.title} <em>{siteData.hero.emphasis}</em></h1><p>{siteData.brand.description}</p>
       <div className="hero-actions"><a className="button primary" href="#contact">{siteData.hero.primaryCta} <Arrow /></a><a className="button secondary" href="#work">{siteData.hero.secondaryCta} <Arrow /></a></div>

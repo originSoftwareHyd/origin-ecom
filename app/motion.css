@@ -128,9 +128,9 @@ body::after{content:'';position:fixed;inset:0;z-index:90;pointer-events:none;opa
 .marquee ul{display:flex;align-items:center;gap:34px;margin:0;padding:0 17px;list-style:none}
 .marquee li{display:flex;align-items:center;gap:34px;font:800 clamp(20px,2.4vw,32px)/1 Inter,ui-sans-serif,system-ui,sans-serif;letter-spacing:-.04em;white-space:nowrap;transition:color .3s}
 .marquee li:hover{color:var(--lime)}
-.marquee li::after{content:'✦';font-size:.55em;color:var(--lime)}
-.marquee li:nth-child(even){color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.55)}
-.marquee li:nth-child(even):hover{-webkit-text-stroke-color:var(--lime)}
+.marquee li::after{content:'✦';font-size:.55em;color:rgba(197,232,108,.55)}
+.marquee li:nth-child(even){color:var(--lime)}
+.marquee li:nth-child(even):hover{color:#fff}
 @keyframes marquee{to{transform:translateX(-50%)}}
 
 @media (prefers-reduced-motion:reduce){
@@ -161,3 +161,8 @@ body::after{content:'';position:fixed;inset:0;z-index:90;pointer-events:none;opa
 .select-list li[aria-selected=true] .select-check{opacity:1;transform:none}
 .form-card{position:relative;z-index:2}
 @media (max-width:430px){.select-list li{grid-template-columns:38px 1fr 14px;gap:10px}.select-text small{display:none}}
+
+/* SplitText word masks clip to the word box, which tight line-height and negative tracking make smaller
+   than the glyphs. Pad the mask (and cancel it with negative margin) so descenders and last letters show.
+   SplitText names the mask by adding -mask to every word of the class, so wordsClass must stay hyphen-free. */
+.splitword-mask{padding:.12em .12em .24em .04em;margin:-.12em -.12em -.24em -.04em}
