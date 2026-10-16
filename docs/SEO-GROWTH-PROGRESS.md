@@ -30,6 +30,17 @@ Started 2026-10-16. Branch: `wip/seo-growth` (local work-in-progress commits; me
 5. **Arabic restructure (in progress)**: English routes moved into route group `app/(site)/` (URLs unchanged; relative imports rewritten);
    `app/global-not-found.js` added + `experimental.globalNotFound` in `next.config.mjs`.
 
+### State at pause (user hit usage limit, 2026-10-16)
+- Writer agents were STOPPED before finishing. Missing files: `data/landing/salla-vs-zid-vs-shopify.js`,
+  `data/landing/ecommerce-website-cost-saudi-arabia.js`, and all of `data/landing-ar/` (ecommerce-store-design, salla-store-design,
+  zatca-e-invoicing). Re-run writers using the same briefs (see SCHEMA.md + research docs), or remove the two guide imports
+  from `data/landing/index.js` to build without them.
+- `lib/i18n.js` created (en/ar UI strings: Arabic nav, form labels, service labels, heard-about options, landing labels, footer).
+  NOT yet wired: Contact.js, Header.js, Footer.js and LandingPage.js still use hard-coded English; they need a `locale` prop reading `ui[locale]`.
+- Not yet created: `app/(ar)/ar/layout.js`, `app/(ar)/ar/page.js`, `app/(ar)/ar/[slug]/page.js`, RTL CSS (letter-spacing:0 for Arabic
+  headings, Arabic-capable font stack, mirrored arrows), hreflang alternates in `buildMetadata`, `inLanguage` param in schema helpers.
+- Build NOT verified since the route-group move. Dev server is stopped.
+
 ### Next steps (in order)
 1. Ensure all 8 landing files exist → `npx next build` → fix errors → screenshot-check pages (headless Chrome script in scratchpad: `shoot.mjs`).
 2. Arabic section: `app/(ar)/ar/layout.js` (html `lang="ar-SA" dir="rtl"`, Arabic header/footer, same CSS + RTL overrides),
