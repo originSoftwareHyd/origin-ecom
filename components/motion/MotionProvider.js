@@ -125,7 +125,7 @@ export default function MotionProvider() {
 
       // Scroll-linked accents.
       gsap.utils.toArray('.vision-mark').forEach(n => gsap.fromTo(n, { xPercent: -30, autoAlpha: 0.2, letterSpacing: '0.1em' }, { xPercent: 0, autoAlpha: 1, letterSpacing: '-0.1em', ease: 'none', scrollTrigger: { trigger: n, start: 'top 95%', end: 'top 45%', scrub: true } }))
-      gsap.utils.toArray('.about-card, .work-feature, .contact').forEach(n => gsap.fromTo(n, { clipPath: 'inset(8% 4% 8% 4% round 28px)' }, { clipPath: 'inset(0% 0% 0% 0% round 0px)', ease: 'none', scrollTrigger: { trigger: n, start: 'top 95%', end: 'top 35%', scrub: true } }))
+      gsap.utils.toArray('.about-card, .work-feature').forEach(n => gsap.fromTo(n, { clipPath: 'inset(8% 4% 8% 4% round 28px)' }, { clipPath: 'inset(0% 0% 0% 0% round 0px)', ease: 'none', scrollTrigger: { trigger: n, start: 'top 95%', end: 'top 35%', scrub: true } }))
       gsap.utils.toArray('.service-page-orb, .big-number, .service-mark').forEach(n => gsap.to(n, { yPercent: -18, ease: 'none', scrollTrigger: { trigger: n, start: 'top bottom', end: 'bottom top', scrub: true } }))
       gsap.utils.toArray('.case-lines').forEach(n => gsap.to(n, { backgroundPositionY: 240, ease: 'none', scrollTrigger: { trigger: n, start: 'top bottom', end: 'bottom top', scrub: true } }))
 
