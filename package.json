@@ -1,8 +1,23 @@
 {
-  "name": "standardtouch-frontend",
+  "name": "origin-ecommerce-frontend",
   "version": "1.0.0",
   "private": true,
-  "scripts": {"dev":"next dev","build":"next build","start":"next start","lint":"eslint ."},
-  "dependencies": {"next":"15.5.4","react":"19.1.1","react-dom":"19.1.1"},
-  "devDependencies": {"eslint":"^9.39.1","eslint-config-next":"15.5.4"}
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "gsap": "^3.13.0",
+    "lenis": "^1.3.4",
+    "next": "15.5.4",
+    "react": "19.1.1",
+    "react-dom": "19.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^9.39.1",
+    "eslint-config-next": "15.5.4"
+  }
 }
