@@ -131,7 +131,7 @@ Dates assume the site goes live in late October 2026. Wave 25's 1 February 2027 
 
 ## 7. Actions only the owner can take
 
-1. **Business details (NAP):** real domain, email, phone, WhatsApp, legal name, CR and VAT numbers and address (`.env.example` / `config/business.config.js`). The domain and `hello@originecommerce.com` are placeholders.
+1. **Business details (NAP):** real domain, email, phone, WhatsApp, legal name, CR and VAT numbers and address (`.env.example` / `config/business.config.js`). The domain is a placeholder; enquiries go to `info@originsoftwares.com`.
 2. **Contact delivery:** `NEXT_PUBLIC_ENABLE_CONTACT_FORM=true`, `NEXT_PUBLIC_API_BASE_URL=/api` and `CONTACT_WEBHOOK_URL`, then a test enquiry end to end in each language.
 3. **Analytics:** set `NEXT_PUBLIC_GA_ID`, mark `generate_lead`, `whatsapp_click` and `phone_click` as key events, and create the "AI assistants" channel group.
 4. **Search consoles:** Google Search Console and Bing Webmaster Tools (`NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` / `NEXT_PUBLIC_BING_SITE_VERIFICATION`), with the sitemap submitted.

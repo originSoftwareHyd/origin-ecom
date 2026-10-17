@@ -14,7 +14,7 @@ export const businessConfig = {
   legalName: process.env.NEXT_PUBLIC_LEGAL_NAME || '', // TODO: legal name exactly as on the commercial registration
   alternateNameArabic: process.env.NEXT_PUBLIC_ARABIC_NAME || '', // TODO: official Arabic trade name, if registered
   siteUrl: (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.originecommerce.com').replace(/\/$/, ''), // TODO: confirm production domain
-  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'hello@originecommerce.com', // TODO: confirm monitored inbox
+  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'info@originsoftwares.com',
   phone: process.env.NEXT_PUBLIC_CONTACT_PHONE || '', // TODO: e.g. +966 5X XXX XXXX
   whatsapp: (process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '').replace(/\D/g, ''), // TODO: international digits, e.g. 9665XXXXXXXX
   crNumber: process.env.NEXT_PUBLIC_CR_NUMBER || '', // Commercial registration number (shown in footer when set)
