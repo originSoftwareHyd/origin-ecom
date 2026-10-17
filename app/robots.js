@@ -1,4 +1,5 @@
 import { businessConfig } from '../config/business.config'
+export const dynamic = 'force-static'
 
 // Search and AI crawlers are named explicitly so the policy is deliberate and auditable: being crawled by
 // AI search (ChatGPT search, Perplexity, Gemini, Copilot, Claude) is a prerequisite for being cited in answers.

@@ -1,4 +1,5 @@
 import { businessConfig } from '../config/business.config'
+export const dynamic = 'force-static'
 
 export default function manifest() {
   return {

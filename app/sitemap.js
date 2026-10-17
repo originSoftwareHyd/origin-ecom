@@ -6,6 +6,7 @@ import { about } from '../data/about'
 import { arPages, arPath } from '../data/landing-ar'
 import { languageAlternates } from '../lib/alternates'
 import { absoluteUrl } from '../lib/seo'
+export const dynamic = 'force-static'
 
 // Lists only indexable, canonical URLs. Form-only pages are noindex and deliberately excluded.
 // Pages that exist in both languages carry hreflang alternates, matching their metadata.
@@ -23,8 +24,8 @@ export default function sitemap() {
     entry('/guides', 0.7, 'weekly'),
     entry('/ar', 0.9, 'weekly'),
     ...arPages.map(page => ({ ...entry(arPath(page), 0.9), lastModified: new Date(page.updated) })),
-    entry('/website-consulting', 0.8),
     ...Object.values(about).map(page => ({ ...entry(page.path, 0.6), lastModified: new Date(page.updated) })),
+    entry('/website-consulting', 0.8),
     entry('/contact', 0.7),
     ...(businessConfig.indexBlueprints ? [entry('/portfolio', 0.6), ...portfolio.map(project => entry(`/portfolio/${project.slug}`, 0.5))] : []),
   ]

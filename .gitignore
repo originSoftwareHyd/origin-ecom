@@ -6,3 +6,6 @@ out
 *.log
 .DS_Store
 !.env.example
+dist
+.api-parked
+dist.zip

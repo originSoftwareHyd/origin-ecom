@@ -37,3 +37,5 @@ Production: `npm run build && npm start`.
 ## Contact form
 
 Without configuration, submitting the form opens a pre-filled email to `NEXT_PUBLIC_CONTACT_EMAIL`. To post enquiries to a CRM or automation tool, set `NEXT_PUBLIC_ENABLE_CONTACT_FORM=true`, `NEXT_PUBLIC_API_BASE_URL=/api` and `CONTACT_WEBHOOK_URL`.
+
+On Hostinger (`npm run build:static`, upload `dist/`), the form is enabled automatically and `deploy/contact.php` emails each enquiry to `info@originsoftwares.com`, with the visitor's address as Reply-To.

@@ -4,6 +4,7 @@ import { getService, services } from '../../../../data/services'
 export const alt = 'Origin Ecommerce service in Saudi Arabia'
 export const size = ogSize
 export const contentType = 'image/png'
+export const dynamic = 'force-static'
 
 export function generateStaticParams() { return services.map(service => ({ slug: service.slug })) }
 
