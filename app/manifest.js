@@ -10,6 +10,6 @@ export default function manifest() {
     background_color: '#f4f3ee',
     theme_color: '#0b5d46',
     lang: 'en-SA',
-    icons: [{ src: '/icon.svg', sizes: 'any', type: 'image/svg+xml' }, { src: '/logo.png', sizes: '512x512', type: 'image/png' }],
+    icons: [{ src: '/icon.png', sizes: '550x550', type: 'image/png' }, { src: '/logo.png', sizes: '512x512', type: 'image/png' }],
   }
 }

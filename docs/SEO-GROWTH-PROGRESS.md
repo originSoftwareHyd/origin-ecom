@@ -1,7 +1,7 @@
 # SEO / GEO / AEO growth project — progress log
 
 Brief: `seo.md`. Strategy, roadmap and owner actions: `docs/SEO-STRATEGY.md`. Research: `docs/research/`.
-Started 2026-10-16. Branch: `wip/seo-growth` (local commits, not pushed). Merge to `main` when the owner approves.
+Started 2026-10-16. Merged to `main` and pushed 2026-10-17; the `wip/seo-growth` branch was deleted.
 
 ## Status (2026-10-17): build steps complete
 
