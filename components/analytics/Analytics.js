@@ -5,6 +5,11 @@ import { captureAttribution, gaId, track } from '../../lib/analytics'
 
 const CONSENT_KEY = 'oe_consent'
 
+const copy = {
+  en: { region: 'Cookie consent', text: 'We use analytics cookies to understand which pages help Saudi businesses find us. No advertising cookies.', decline: 'Decline', accept: 'Accept' },
+  ar: { region: 'الموافقة على ملفات تعريف الارتباط', text: 'نستخدم ملفات تعريف ارتباط تحليلية لنعرف الصفحات التي تساعد المنشآت السعودية في الوصول إلينا. لا نستخدم ملفات إعلانية.', decline: 'رفض', accept: 'موافق' },
+}
+
 function readConsent() {
   try { return window.localStorage.getItem(CONSENT_KEY) } catch { return null }
 }
@@ -12,7 +17,8 @@ function readConsent() {
 // GA4 with Consent Mode v2: analytics storage stays denied until the visitor accepts (PDPL), so before
 // consent Google receives only cookieless pings. Lead events (WhatsApp, phone, email) are tracked site-wide
 // by delegation, so every CTA is covered without wiring each link.
-export default function Analytics() {
+export default function Analytics({ locale = 'en' }) {
+  const t = copy[locale]
   const [consent, setConsent] = useState('pending')
 
   useEffect(() => {
@@ -41,9 +47,9 @@ export default function Analytics() {
   return <>
     <Script id="ga-consent" strategy="afterInteractive">{`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}window.gtag=gtag;var c=null;try{c=localStorage.getItem('${CONSENT_KEY}')}catch(e){}gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:c==='granted'?'granted':'denied'});gtag('js',new Date());gtag('config','${gaId}');`}</Script>
     <Script src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} strategy="afterInteractive" />
-    {consent === 'ask' && <div className="consent-bar" role="region" aria-label="Cookie consent">
-      <p>We use analytics cookies to understand which pages help Saudi businesses find us. No advertising cookies.</p>
-      <div><button type="button" className="button secondary" onClick={() => decide('denied')}>Decline</button><button type="button" className="button primary" onClick={() => decide('granted')}>Accept</button></div>
+    {consent === 'ask' && <div className="consent-bar" role="region" aria-label={t.region}>
+      <p>{t.text}</p>
+      <div><button type="button" className="button secondary" onClick={() => decide('denied')}>{t.decline}</button><button type="button" className="button primary" onClick={() => decide('granted')}>{t.accept}</button></div>
     </div>}
   </>
 }

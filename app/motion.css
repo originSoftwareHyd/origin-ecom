@@ -224,3 +224,6 @@ body::after{content:'';position:fixed;inset:0;z-index:90;pointer-events:none;opa
 .guides-sub{padding-top:20px;padding-bottom:30px}
 .guides-sub h2{font-size:clamp(34px,4vw,52px)}
 @media (max-width:760px){.landing-hero{padding-top:36px}.breadcrumbs{padding-top:18px}}
+/* Grid items default to min-width:auto, so a wide data table stretched the whole content column (and page)
+   past the viewport on phones; letting the column shrink makes the table scroll inside .data-table-scroll. */
+.case-section>div{min-width:0}

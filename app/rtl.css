@@ -1,0 +1,29 @@
+/* Right-to-left overrides for the Arabic layout (app/(ar)/ar/layout.js). Flex and grid already mirror
+   under dir="rtl"; this file fixes what does not: the typeface, letter-spacing (any tracking breaks
+   Arabic letter joining), physical left/right values, and arrow motion. !important is used only where
+   the base sheets set the property through higher-specificity selectors or font shorthands. */
+
+html[dir="rtl"] body,
+html[dir="rtl"] body * { font-family: var(--font-arabic), 'Segoe UI', Tahoma, 'Geeza Pro', sans-serif !important; letter-spacing: 0 !important }
+
+/* Arabic needs more vertical room than the tight Latin display settings. */
+html[dir="rtl"] h1, html[dir="rtl"] h2 { line-height: 1.35 !important }
+html[dir="rtl"] h3, html[dir="rtl"] p, html[dir="rtl"] li { line-height: 1.8 }
+html[dir="rtl"] .eyebrow, html[dir="rtl"] .case-label, html[dir="rtl"] .index { font-size: 13px }
+
+/* Physical alignment and spacing from the base sheets. */
+html[dir="rtl"] .select-trigger, html[dir="rtl"] .success button,
+html[dir="rtl"] .data-table caption, html[dir="rtl"] .data-table th, html[dir="rtl"] .data-table td { text-align: right }
+html[dir="rtl"] .sources ol { padding-left: 0; padding-right: 20px }
+html[dir="rtl"] .breadcrumbs li + li::before { margin-right: 0; margin-left: 6px }
+html[dir="rtl"] .offering-list div:hover { padding-left: 0; padding-right: 12px }
+
+/* Arrows point up-left (↖); mirror their hover motion. */
+html[dir="rtl"] .button:hover > span[aria-hidden], html[dir="rtl"] .header-cta:hover > span[aria-hidden] { transform: translate(-3px, -3px) rotate(-45deg) }
+
+/* Email addresses, phone numbers and other Latin runs stay left to right inside Arabic text. */
+html[dir="rtl"] a[href^="mailto:"], html[dir="rtl"] a[href^="tel:"] { unicode-bidi: isolate; direction: ltr }
+
+/* The form honeypot sits at left:-10000px; in RTL, overflow to the left is scrollable and would shift the
+   whole page out of view, so push it off the right edge instead, which RTL pages clip. */
+html[dir="rtl"] .hp-field { left: auto; right: -10000px }

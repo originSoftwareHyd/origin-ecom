@@ -3,6 +3,7 @@ import { services } from '../../data/services'
 import { siteData } from '../../data/site'
 import { absoluteUrl } from '../../lib/seo'
 import { guides, landingPath, servicePages } from '../../data/landing'
+import { arPages, arPath } from '../../data/landing-ar'
 
 // llms.txt (https://llmstxt.org): a plain-language summary that AI assistants can read to understand
 // the business. It is generated from the same data as the pages, so facts stay consistent everywhere.
@@ -31,6 +32,11 @@ export function GET() {
     '## Guides (sourced, dated)',
     '',
     ...guides.map(page => `- [${page.metaTitle}](${absoluteUrl(landingPath(page))}) (updated ${page.updated}): ${page.intro}`),
+    '',
+    '## Arabic pages (ar-SA)',
+    '',
+    `- [الصفحة الرئيسية بالعربي](${absoluteUrl('/ar')})`,
+    ...arPages.map(page => `- [${page.metaTitle}](${absoluteUrl(arPath(page))}): ${page.intro}`),
     '',
     '## Key pages',
     '',
