@@ -152,3 +152,6 @@ button:focus-visible,
 
 .logo-img{display:block;height:44px;width:auto}
 footer .logo-img{height:52px}
+
+.about-pillars p{margin:6px 0 0;color:var(--muted);font-size:14px;line-height:1.6}
+.about-pillars strong a{color:inherit}

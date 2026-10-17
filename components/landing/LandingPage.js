@@ -13,7 +13,7 @@ import { articleSchema, breadcrumbSchema, faqSchema, landingServiceSchema, webPa
 
 const formatDate = (iso, dateLocale) => new Date(`${iso}T00:00:00Z`).toLocaleDateString(dateLocale, { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })
 
-function Section({ section, index }) {
+export function Section({ section, index }) {
   const { eyebrow, heading, emphasis, body = [], list, steps, table, dark } = section
   return <section className={`case-section landing-section${dark ? ' dark' : ''}`}>
     <div className="case-label">{eyebrow || String(index + 1).padStart(2, '0')}</div>

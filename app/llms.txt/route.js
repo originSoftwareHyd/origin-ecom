@@ -41,6 +41,7 @@ export function GET() {
     '## Key pages',
     '',
     `- [Home](${absoluteUrl('/')}): overview, process and frequently asked questions`,
+    `- [About us](${absoluteUrl('/about')}): who we are, how we work and the standards we commit to`,
     `- [All services](${absoluteUrl('/services')})`,
     `- [Guides](${absoluteUrl('/guides')})`,
     `- [Free consultation](${absoluteUrl('/website-consulting')})`,
